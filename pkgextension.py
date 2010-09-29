@@ -45,7 +45,7 @@ class Extension(_Extension):
         return outdict
 
     def __init__(self, *args, **kwargs):
-        packages = kwargs.pop('pkg_config')
+        packages = kwargs.pop('pkg_config', [])
         for package in packages:
             options = self.__options_for_package(package, kwargs)
         _Extension.__init__(self, *args, **kwargs)
